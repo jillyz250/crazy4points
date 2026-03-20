@@ -5,10 +5,15 @@
     "bonus": "30%",
     "date": "2026-03-01",
     "status": "Active",
-    "history": [
-      { "bonus": "25%", "date": "2025-10-01" }
-    ],
     "notes": "Frequent transfer partner with strong value for Europe flights"
+  },
+  {
+    "program": "Amex Membership Rewards",
+    "partner": "Virgin Atlantic",
+    "bonus": "25%",
+    "date": "2026-02-20",
+    "status": "Active",
+    "notes": "Great for Delta metal flights in the US"
   },
   {
     "program": "Chase Ultimate Rewards",
@@ -16,7 +21,22 @@
     "bonus": "25%",
     "date": "2026-02-15",
     "status": "Expired",
-    "history": [],
     "notes": "Excellent for hotel redemptions"
+  },
+  {
+    "program": "Citi ThankYou",
+    "partner": "Turkish Airlines Miles&Smiles",
+    "bonus": "20%",
+    "date": "2026-01-10",
+    "status": "Expired",
+    "notes": "Sweet spot for Star Alliance business class"
+  },
+  {
+    "program": "Capital One Venture",
+    "partner": "Air Canada Aeroplan",
+    "bonus": "30%",
+    "date": "2026-03-10",
+    "status": "Active",
+    "notes": "Strong value for Star Alliance redemptions"
   }
 ]

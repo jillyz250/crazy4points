@@ -1,69 +1,133 @@
-import transferBonuses from '@/data/transfer-bonuses.json';
+import bonuses from '@/data/transfer-bonuses.json'
 
-type TransferBonus = {
-  program: string;
-  partner: string;
-  bonus: string;
-  date: string;
-  status: 'Active' | 'Expired';
-};
+export const metadata = {
+  title: 'Transfer Bonus Tracker — Crazy4Points',
+  description: 'Current and recent transfer bonuses across major points programs — updated regularly.',
+}
 
-function formatDate(date: string) {
-  return new Intl.DateTimeFormat('en-US', {
-    month: 'short',
-    day: 'numeric',
-    year: 'numeric',
-    timeZone: 'UTC',
-  }).format(new Date(`${date}T00:00:00Z`));
+type Bonus = {
+  program: string
+  partner: string
+  bonus: string
+  date: string
+  status: string
+  notes: string
 }
 
 export default function TransferBonusTrackerPage() {
-  const rows = transferBonuses as TransferBonus[];
+  const data = bonuses as Bonus[]
 
   return (
-    <section className="space-y-8">
-      <div className="max-w-3xl space-y-3">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[color:var(--accent)]">Tools</p>
-        <h1 className="text-4xl font-semibold tracking-tight text-[color:var(--primary)]">Transfer Bonus Tracker</h1>
-        <p className="text-lg leading-8 text-slate-600">
-          Current and recent transfer bonuses across major programs
-        </p>
-      </div>
+    <section className="w-full py-16 px-4" style={{ backgroundColor: '#F9F8FF' }}>
+      <div className="max-w-5xl mx-auto">
+        {/* Page header */}
+        <div className="mb-10">
+          <h1
+            className="text-4xl sm:text-5xl font-extrabold mb-3 font-heading"
+            style={{ color: '#5B2D8E' }}
+          >
+            Transfer Bonus Tracker
+          </h1>
+          <p className="text-base font-body" style={{ color: '#4a4a6a' }}>
+            Current and recent transfer bonuses across major points programs.
+          </p>
+        </div>
 
-      <div className="overflow-hidden rounded-3xl border border-[color:var(--border)] bg-white shadow-sm">
-        <div className="overflow-x-auto">
-          <table className="min-w-full divide-y divide-[color:var(--border)] text-left">
-            <thead className="bg-[color:var(--muted)]">
-              <tr className="text-sm uppercase tracking-[0.18em] text-slate-500">
-                <th className="px-6 py-4 font-semibold">Program</th>
-                <th className="px-6 py-4 font-semibold">Partner</th>
-                <th className="px-6 py-4 font-semibold">Bonus</th>
-                <th className="px-6 py-4 font-semibold">Date</th>
-                <th className="px-6 py-4 font-semibold">Status</th>
+        {/* Table — scrollable on mobile */}
+        <div
+          className="overflow-x-auto rounded-2xl"
+          style={{ boxShadow: '0 4px 24px rgba(91,45,142,0.08)' }}
+        >
+          <table className="w-full min-w-[640px] bg-white text-sm border-collapse">
+            <thead>
+              <tr style={{ backgroundColor: '#5B2D8E' }}>
+                <Th>Program</Th>
+                <Th>Partner</Th>
+                <Th>Bonus</Th>
+                <Th>Date</Th>
+                <Th>Status</Th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-[color:var(--border)] bg-white text-sm text-slate-700 sm:text-base">
-              {rows.map((row) => (
-                <tr key={`${row.program}-${row.partner}-${row.date}`} className="transition hover:bg-orange-50/50">
-                  <td className="px-6 py-4 font-medium text-slate-900">{row.program}</td>
-                  <td className="px-6 py-4">{row.partner}</td>
-                  <td className="px-6 py-4 font-semibold text-[color:var(--primary)]">{row.bonus}</td>
-                  <td className="px-6 py-4">{formatDate(row.date)}</td>
-                  <td
-                    className={`px-6 py-4 font-semibold ${
-                      row.status === 'Active' ? 'text-emerald-600' : 'text-slate-400'
-                    }`}
-                  >
-                    {row.status}
-                  </td>
+            <tbody>
+              {data.map((row, i) => (
+                <tr
+                  key={i}
+                  className="border-b tracker-row"
+                  style={{ borderBottomColor: '#f0edf8' }}
+                >
+                  <Td>{row.program}</Td>
+                  <Td>{row.partner}</Td>
+                  <Td>
+                    <span className="font-bold" style={{ color: '#5B2D8E' }}>
+                      {row.bonus}
+                    </span>
+                  </Td>
+                  <Td>{formatDate(row.date)}</Td>
+                  <Td>
+                    <StatusBadge status={row.status} />
+                  </Td>
                 </tr>
               ))}
             </tbody>
           </table>
         </div>
+
+        {/* Footer note */}
+        <p className="mt-4 text-xs italic font-body" style={{ color: '#9e94b8' }}>
+          Updated regularly. Verified against official bank sources.
+        </p>
       </div>
 
-      <p className="text-sm text-slate-500">Updated regularly. Verified with official sources.</p>
+      {/* CSS hover via style tag — keeps this a pure server component */}
+      <style>{`
+        .tracker-row { background-color: #ffffff; }
+        .tracker-row:nth-child(even) { background-color: #fdfcff; }
+        .tracker-row:hover { background-color: #EDE7F6 !important; }
+      `}</style>
     </section>
-  );
+  )
+}
+
+function Th({ children }: { children: React.ReactNode }) {
+  return (
+    <th
+      className="px-5 py-4 text-left text-xs font-bold tracking-wider uppercase"
+      style={{ color: '#ffffff' }}
+    >
+      {children}
+    </th>
+  )
+}
+
+function Td({ children }: { children: React.ReactNode }) {
+  return (
+    <td className="px-5 py-4 font-body" style={{ color: '#1A1A2E' }}>
+      {children}
+    </td>
+  )
+}
+
+function StatusBadge({ status }: { status: string }) {
+  const isActive = status === 'Active'
+  return (
+    <span className="inline-flex items-center gap-1.5 font-bold text-xs">
+      <span
+        className="w-2 h-2 rounded-full flex-shrink-0"
+        style={{ backgroundColor: isActive ? '#16a34a' : '#9ca3af' }}
+      />
+      <span
+        style={{
+          color: isActive ? '#16a34a' : '#9ca3af',
+          textDecoration: isActive ? 'none' : 'line-through',
+        }}
+      >
+        {status}
+      </span>
+    </span>
+  )
+}
+
+function formatDate(dateStr: string) {
+  const d = new Date(dateStr + 'T00:00:00')
+  return d.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })
 }
