@@ -8,38 +8,29 @@ export const metadata = {
 export default function AboutMePage() {
   return (
     <section className="w-full py-16 px-4" style={{ backgroundColor: '#F9F8FF' }}>
-      <div className="max-w-5xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-          {/* LEFT — Photo */}
-          <div className="flex justify-center md:justify-start">
-            <div
-              className="relative w-full max-w-sm rounded-2xl overflow-hidden"
-              style={{ boxShadow: '0 8px 40px rgba(91,45,142,0.15)' }}
-            >
-              <Image
-                src="/jill.jpg"
-                alt="Jill — crazy4points"
-                width={480}
-                height={600}
-                className="w-full h-auto object-cover"
-                priority
-              />
-            </div>
+      <div className="max-w-2xl mx-auto">
+        {/* Photo — top, centered */}
+        <div className="flex justify-center mb-10">
+          <div
+            className="relative w-full max-w-sm rounded-2xl overflow-hidden"
+            style={{ boxShadow: '0 8px 40px rgba(91,45,142,0.15)' }}
+          >
+            <Image
+              src="/jill.jpg"
+              alt="Jill — crazy4points"
+              width={480}
+              height={600}
+              className="w-full h-auto object-cover"
+              priority
+            />
           </div>
+        </div>
 
-          {/* RIGHT — Bio */}
-          <div>
-            <h1
-              className="text-4xl sm:text-5xl font-extrabold mb-8"
-              style={{ color: '#5B2D8E', fontFamily: 'var(--font-heading)' }}
-            >
-              About Me
-            </h1>
-
-            <div
-              className="space-y-5 leading-8 text-base"
-              style={{ color: '#1A1A2E', fontFamily: 'var(--font-body)', maxWidth: '56ch' }}
-            >
+        {/* Bio — below photo */}
+        <div
+          className="space-y-5 leading-8 text-base"
+          style={{ color: '#1A1A2E', fontFamily: 'var(--font-body)' }}
+        >
               <p>
                 <em
                   className="text-2xl font-bold not-italic"
@@ -107,8 +98,6 @@ export default function AboutMePage() {
                   It&apos;s a game. And I&apos;m all in.
                 </strong>
               </p>
-            </div>
-          </div>
         </div>
       </div>
     </section>
