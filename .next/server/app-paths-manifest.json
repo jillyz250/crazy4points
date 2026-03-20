@@ -1,0 +1,6 @@
+{
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js",
+  "/about-me/page": "app/about-me/page.js",
+  "/tools/transfer-bonus-tracker/page": "app/tools/transfer-bonus-tracker/page.js"
+}
