@@ -1,37 +1,42 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import { SiteFooter } from '@/components/site-footer';
-import { SiteHeader } from '@/components/site-header';
+import type { Metadata } from 'next'
+import { Plus_Jakarta_Sans, DM_Sans } from 'next/font/google'
+import './globals.css'
+import Navbar from '@/components/Navbar'
+import Footer from '@/components/Footer'
 
-const inter = Inter({
+const plusJakartaSans = Plus_Jakarta_Sans({
   subsets: ['latin'],
+  variable: '--font-heading',
   display: 'swap',
-  variable: '--font-inter',
-});
+})
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  variable: '--font-body',
+  display: 'swap',
+})
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://crazy4points.com'),
-  title: 'Crazy4Points',
-  description: 'Earn more points and travel for free using smarter strategies.',
-};
+  title: 'Crazy4Points — Earn More. Travel Free.',
+  description:
+    'Real strategies, tools, and deals to help everyday travelers earn more points and fly for free.',
+  icons: {
+    icon: '/favicon.png',
+  },
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
-    <html lang="en">
-      <body className={`${inter.variable} min-h-screen bg-white text-slate-900 antialiased`}>
-        <div className="flex min-h-screen flex-col">
-          <SiteHeader />
-          <main className="flex-1">
-            <div className="mx-auto max-w-6xl px-6 py-12 sm:py-16">{children}</div>
-          </main>
-          <SiteFooter />
-        </div>
+    <html lang="en" className={`${plusJakartaSans.variable} ${dmSans.variable}`}>
+      <body className="min-h-screen flex flex-col font-body" style={{ backgroundColor: '#ffffff', color: '#1A1A2E' }}>
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
-  );
+  )
 }
