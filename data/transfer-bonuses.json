@@ -1,0 +1,22 @@
+[
+  {
+    "program": "Amex Membership Rewards",
+    "partner": "Air France Flying Blue",
+    "bonus": "30%",
+    "date": "2026-03-01",
+    "status": "Active",
+    "history": [
+      { "bonus": "25%", "date": "2025-10-01" }
+    ],
+    "notes": "Frequent transfer partner with strong value for Europe flights"
+  },
+  {
+    "program": "Chase Ultimate Rewards",
+    "partner": "World of Hyatt",
+    "bonus": "25%",
+    "date": "2026-02-15",
+    "status": "Expired",
+    "history": [],
+    "notes": "Excellent for hotel redemptions"
+  }
+]
