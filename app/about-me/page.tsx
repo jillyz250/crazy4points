@@ -41,53 +41,31 @@ export default function AboutMePage() {
               </p>
 
               <p>
-                The strategy, the timing, the moving pieces. For me, points and miles have never
-                just been about travel—they&apos;re about understanding how the system works and
-                using it to your advantage.
+                The strategy, the timing, the moving pieces. For me, points and miles have never just been about travel. They&apos;re about understanding how the system works and using it to my advantage.
               </p>
 
               <p>
-                I&apos;m Jill. I discovered this world over 20 years ago while planning a cruise,
-                when I came across a credit card offer tied to a cruise discount. What started as a
-                simple way to save a few hundred dollars quickly turned into something much bigger.
-                I began digging deeper, learning how rewards worked, and building strategies to get
-                the most value possible.
+                I&apos;m Jill. I stumbled into this world over 20 years ago while planning a cruise. A credit card offer caught my eye, and what started as a way to save a few hundred dollars quickly turned into something much bigger. I started digging deeper, learning how rewards actually worked, and building strategies to squeeze out as much value as possible.
               </p>
 
               <p>
-                Over time, that curiosity became lived experience. I&apos;ve used points and miles
-                to travel to places like Napa, France, Greece, Jamaica, the Bahamas, Arizona—and
-                many more exciting places—experiencing everything from lie-flat seats and high-end
-                stays to more practical, budget-friendly trips when it made sense. The common thread
-                has always been value.
+                Over the years, I&apos;ve put that curiosity to work. I&apos;ve used points and miles to get to Napa, France, Greece, Jamaica, the Bahamas, Arizona, and plenty of other places, sometimes in lie-flat seats and high-end hotels, sometimes on perfectly practical trips where the math just made sense. The through-line has always been value.
               </p>
 
               <p>
-                Somewhere along the way, I became the person my friends always come to for travel
-                advice. I love the research, the strategy, and finding the best options—uncovering
-                deals most people wouldn&apos;t think to look for. There&apos;s something
-                incredibly satisfying about helping someone take a better trip than they thought
-                was possible.
+                Somewhere along the way, I became the person my friends call when they&apos;re planning a trip. I love the research, the strategy, the hunt for options most people wouldn&apos;t think to look for. There&apos;s something satisfying about helping someone take a trip they didn&apos;t think they could afford.
               </p>
 
               <p>
-                I bought the crazy4points domain over 15 years ago with the idea of building a
-                blog around this space. Life got busy, priorities shifted, and the idea stayed on
-                the shelf. Now, with my kids older, it feels like the right time to bring it to
-                life.
+                I bought the crazy4points domain over 15 years ago thinking I&apos;d build a blog around it. Life had other plans. With my kids older now, it finally feels like the right time.
               </p>
 
               <p>
-                More recently, my interest in AI—and figuring out how to apply it to this
-                space—has completely changed the landscape for me. It&apos;s added a new layer of
-                strategy, efficiency, and opportunity, and brought a renewed level of focus and
-                energy to something I&apos;ve always enjoyed.
+                More recently, my obsession with AI has completely changed how I approach travel. It&apos;s added a new layer of strategy and efficiency, and honestly reignited my obsession with something I&apos;ve always loved.
               </p>
 
               <p>
-                This site reflects everything I&apos;ve learned over the years—real strategies,
-                practical tools, and a straightforward approach to using points, miles, and credit
-                card benefits effectively.
+                This site is everything I&apos;ve learned over the years: real strategies, practical tools, and a no-nonsense approach to getting the most out of your points, miles, and credit card benefits.
               </p>
 
               <p>
