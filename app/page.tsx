@@ -5,36 +5,36 @@ export default function HomePage() {
   return (
     <>
       {/* HERO SECTION */}
-      <section
-        className="w-full py-24 px-4 text-center"
-        style={{
-          background: 'linear-gradient(135deg, #F9F8FF 0%, #EDE7F6 100%)',
-        }}
-      >
+      <section className="w-full py-24 px-4 text-center">
         <div className="max-w-3xl mx-auto">
-          <span
-            className="inline-block text-xs font-bold tracking-widest px-4 py-1.5 rounded-full mb-6"
-            style={{ backgroundColor: '#F5A623', color: '#ffffff' }}
-          >
-            COMING SOON
-          </span>
           <h1
-            className="text-5xl sm:text-6xl font-extrabold leading-tight mb-6 font-heading"
-            style={{ color: '#5B2D8E' }}
+            className="text-4xl sm:text-5xl font-extrabold leading-tight mb-5 font-heading"
+            style={{ color: '#2a2050' }}
           >
-            Earn More. Travel Free.
+            Points, Perks, and Travel That Hits Different.
           </h1>
           <p
-            className="text-lg sm:text-xl leading-relaxed max-w-xl mx-auto font-body"
-            style={{ color: '#4a4a6a' }}
+            className="text-lg sm:text-xl leading-relaxed max-w-xl mx-auto font-body italic mb-10"
+            style={{ color: '#5a4e7a' }}
           >
-            Simple strategies, tools, and real deals to maximize your points.
+            Because epic travel isn&apos;t just for the fancy people.
           </p>
+          <a
+            href="/tools/transfer-bonus-tracker"
+            className="inline-block text-base font-semibold px-8 py-3.5 rounded-xl transition-all duration-150 font-body"
+            style={{
+              backgroundColor: '#d4960a',
+              color: '#ffffff',
+              boxShadow: '0 4px 16px rgba(212,150,10,0.35)',
+            }}
+          >
+            Tell Me Everything
+          </a>
         </div>
       </section>
 
       {/* ACTION FEED SECTION */}
-      <section className="w-full py-16 px-4 bg-white">
+      <section className="w-full py-16 px-4" style={{ backgroundColor: 'rgba(255,255,255,0.7)', backdropFilter: 'blur(8px)' }}>
         <div className="max-w-3xl mx-auto">
           <p
             className="text-xs font-bold tracking-widest mb-5"
@@ -67,7 +67,7 @@ export default function HomePage() {
       </section>
 
       {/* WHY CRAZY4POINTS SECTION */}
-      <section className="w-full py-16 px-4" style={{ backgroundColor: '#F9F8FF' }}>
+      <section className="w-full py-16 px-4" style={{ backgroundColor: 'rgba(249,248,255,0.85)' }}>
         <div className="max-w-5xl mx-auto">
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
             <FeatureCard

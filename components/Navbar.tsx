@@ -8,12 +8,9 @@ export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
-    <nav
-      className="sticky top-0 z-50 w-full bg-white border-b border-gray-200"
-      style={{ borderBottomColor: '#e5e7eb' }}
-    >
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="w-full">
+      <div className="max-w-6xl mx-auto px-5 sm:px-8 lg:px-12">
+        <div className="flex items-center justify-between h-18 py-4">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image
@@ -29,8 +26,9 @@ export default function Navbar() {
           {/* Desktop nav links */}
           <div className="hidden md:flex items-center gap-8">
             <NavLink href="/">Home</NavLink>
-            <NavLink href="/about-me">About Me</NavLink>
-            <NavLink href="/tools/transfer-bonus-tracker">Tools</NavLink>
+            <NavLink href="/about-me">About</NavLink>
+            <NavLink href="/sign-in">Sign in</NavLink>
+            <SubscribeButton />
           </div>
 
           {/* Mobile hamburger */}
@@ -41,25 +39,28 @@ export default function Navbar() {
           >
             <span
               className={`block w-6 h-0.5 transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`}
-              style={{ backgroundColor: '#5B2D8E' }}
+              style={{ backgroundColor: '#4a3a6a' }}
             />
             <span
               className={`block w-6 h-0.5 transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`}
-              style={{ backgroundColor: '#5B2D8E' }}
+              style={{ backgroundColor: '#4a3a6a' }}
             />
             <span
               className={`block w-6 h-0.5 transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`}
-              style={{ backgroundColor: '#5B2D8E' }}
+              style={{ backgroundColor: '#4a3a6a' }}
             />
           </button>
         </div>
 
         {/* Mobile menu */}
         {menuOpen && (
-          <div className="md:hidden border-t border-gray-100 py-4 flex flex-col gap-4">
+          <div className="md:hidden border-t border-purple-100 py-4 flex flex-col gap-4 pb-6">
             <MobileNavLink href="/" onClick={() => setMenuOpen(false)}>Home</MobileNavLink>
-            <MobileNavLink href="/about-me" onClick={() => setMenuOpen(false)}>About Me</MobileNavLink>
-            <MobileNavLink href="/tools/transfer-bonus-tracker" onClick={() => setMenuOpen(false)}>Tools</MobileNavLink>
+            <MobileNavLink href="/about-me" onClick={() => setMenuOpen(false)}>About</MobileNavLink>
+            <MobileNavLink href="/sign-in" onClick={() => setMenuOpen(false)}>Sign in</MobileNavLink>
+            <div className="px-2 pt-2">
+              <SubscribeButton />
+            </div>
           </div>
         )}
       </div>
@@ -71,14 +72,27 @@ function NavLink({ href, children }: { href: string; children: React.ReactNode }
   return (
     <Link
       href={href}
-      className="text-sm font-medium transition-colors duration-150 relative group"
-      style={{ color: '#5B2D8E', fontFamily: 'var(--font-body)' }}
+      className="text-sm font-medium transition-colors duration-150"
+      style={{ color: '#3d3060', fontFamily: 'var(--font-body)' }}
     >
       {children}
-      <span
-        className="absolute -bottom-0.5 left-0 w-0 h-0.5 transition-all duration-200 group-hover:w-full"
-        style={{ backgroundColor: '#F5A623' }}
-      />
+    </Link>
+  )
+}
+
+function SubscribeButton() {
+  return (
+    <Link
+      href="/subscribe"
+      className="text-sm font-semibold px-5 py-2 rounded-full transition-all duration-150"
+      style={{
+        backgroundColor: '#ffffff',
+        color: '#1A1A2E',
+        boxShadow: '0 2px 8px rgba(0,0,0,0.12)',
+        fontFamily: 'var(--font-body)',
+      }}
+    >
+      Subscribe
     </Link>
   )
 }
@@ -97,7 +111,7 @@ function MobileNavLink({
       href={href}
       onClick={onClick}
       className="text-base font-medium px-2 py-1 rounded transition-colors"
-      style={{ color: '#5B2D8E' }}
+      style={{ color: '#3d3060' }}
     >
       {children}
     </Link>
