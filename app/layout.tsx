@@ -32,17 +32,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${plusJakartaSans.variable} ${dmSans.variable}`}>
-      <body className="min-h-screen font-body p-3 sm:p-5 md:p-8" style={{ backgroundColor: '#ede8df', color: '#1A1A2E' }}>
-        <div
-          className="flex flex-col rounded-3xl overflow-hidden min-h-[calc(100vh-1.5rem)] sm:min-h-[calc(100vh-2.5rem)] md:min-h-[calc(100vh-4rem)]"
-          style={{
-            background: 'radial-gradient(ellipse at 50% 0%, #faf8ff 0%, #ece4f8 45%, #c9b8e8 100%)',
-          }}
-        >
-          <Navbar />
-          <main className="flex-1">{children}</main>
-          <Footer />
-        </div>
+      <body className="min-h-screen flex flex-col font-body" style={{ color: '#1A1A2E' }}>
+        <Navbar />
+        <main className="flex-1">{children}</main>
+        <Footer />
       </body>
     </html>
   )
